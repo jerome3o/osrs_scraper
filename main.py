@@ -1,5 +1,6 @@
 import time
 import datetime
+from urllib.parse import quote
 from typing import Optional
 from OSRS_Hiscores import Hiscores
 from pydantic import BaseModel
@@ -102,7 +103,7 @@ _BOSSES = [
 
 def get_user_data(username: str) -> UserInfo:
     # Initialize user object, if no account type is specified, we assume 'N'
-    user = Hiscores(username, "N")
+    user = Hiscores(quote(username), "N")
 
     skills = {
         skill_name: StatInfo(**skill_data)
