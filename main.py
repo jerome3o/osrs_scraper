@@ -138,6 +138,7 @@ def main():
   users = [
     "shupwup",
     "jerome-o",
+    "ryan the ant",
     "telemascope",
     "furion",
   ]
