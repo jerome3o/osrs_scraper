@@ -6,6 +6,9 @@ from OSRS_Hiscores import Hiscores
 from pydantic import BaseModel
 
 
+from boss import get_boss_list
+
+
 class StatInfo(BaseModel):
     rank: int
     level: int
@@ -33,72 +36,7 @@ class OsrsScrape(BaseModel):
 
 
 # Get the entire stat dictionary
-_BOSSES = [
-    "Bounty Hunter - Hunter",
-    "Bounty Hunter - Rogue",
-    "Clue Scrolls (all)",
-    "Clue Scrolls (beginner)",
-    "Clue Scrolls (easy)",
-    "Clue Scrolls (medium)",
-    "Clue Scrolls (hard)",
-    "Clue Scrolls (elite)",
-    "Clue Scrolls (master)",
-    "LMS - Rank",
-    "PvP Arena - Rank",
-    "Soul Wars Zeal",
-    "Rifts closed",
-    "Abyssal Sire",
-    "Alchemical Hydra",
-    "Barrows Chests",
-    "Bryophyta",
-    "Callisto",
-    "Cerberus",
-    "Chambers of Xeric",
-    "Chambers of Xeric: Challenge Mode",
-    "Chaos Elemental",
-    "Chaos Fanatic",
-    "Commander Zilyana",
-    "Corporeal Beast",
-    "Crazy Archaeologist",
-    "Dagannoth Prime",
-    "Dagannoth Rex",
-    "Dagannoth Supreme",
-    "Deranged Archaeologist",
-    "General Graardor",
-    "Giant Mole",
-    "Grotesque Guardians",
-    "Hespori",
-    "Kalphite Queen",
-    "King Black Dragon",
-    "Kraken",
-    "Kree'Arra",
-    "K'ril Tsutsaroth",
-    "Mimic",
-    "Nex",
-    "Nightmare",
-    "Phosani's Nightmare",
-    "Obor",
-    "Phantom Muspah",
-    "Sarachnis",
-    "Scorpia",
-    "Skotizo",
-    "Tempoross",
-    "The Gauntlet",
-    "The Corrupted Gauntlet",
-    "Theatre of Blood",
-    "Theatre of Blood: Hard Mode",
-    "Thermonuclear Smoke Devil",
-    "Tombs of Amascut",
-    "Tombs of Amascut: Expert Mode",
-    "TzKal-Zuk",
-    "TzTok-Jad",
-    "Venenatis",
-    "Vet'ion",
-    "Vorkath",
-    "Wintertodt",
-    "Zalcano",
-    "Zulrah",
-]
+_BOSSES = get_boss_list()
 
 
 def get_user_data(username: str) -> UserInfo:
