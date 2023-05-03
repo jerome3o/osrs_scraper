@@ -72,6 +72,8 @@ def main():
         "ryan the ant",
         "telemascope",
         "furion",
+        "mrsgerkinz",
+        "orangeair64",
     ]
 
     data = scrape_users(users)
